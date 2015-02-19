@@ -1,0 +1,37 @@
+/******* 		Fonts 		*******/
+/*@import url(http://fonts.googleapis.com/css?family=Oxygen);*/
+/******* 		Defaults 		*******/
+* {margin: 0;padding: 0;}
+html, body, #outer {width: 100%;height: 100%;}
+body {font: 100%/1.6 'Oxygen', Verdana, Tahoma, Arial;color: #000;}
+html.buffalo {background: url(../images/buffalo.jpg);background-size: cover;}
+html.cow {background: url(../images/cow.jpg);background-size: cover;}
+body {background: rgba(255,255,255,0.75);}
+
+/******* 		Styles 		*******/
+header {padding: 10px;}
+header:after {content: '';display: table;clear: both;}
+header a {background: rgb(108,195,160);color: #fff;text-decoration: none;font-size: 14px;padding: 5px 10px;border-bottom: 2px solid rgb(88,175,140);cursor: pointer;}
+header a.red {background: rgb(237, 114, 92);border-color: rgb(217,94,72);}
+header a:hover {position: relative;top: 2px;border-bottom: 0;}
+header a:first-child {float: left;}
+header a:nth-child(2) {position: absolute;top: 10px;left: calc(50% - 42px);}
+header a:nth-child(2):hover {top: 12px;}
+header a:last-child {float: right;}
+
+#morning, #evening {width: 50%;float: left;height: 90%;}
+.wrap {padding-top: 5%;}
+.title {font-size: 2em;text-align: center;padding: 0 0 1em;}
+.title small {font-size: 0.75em;color: #666;}
+table {margin: 0 auto;background-color: rgba(255,255,255,0.75);}
+thead {border-bottom: 1px solid #ddd;}
+table input {border: none;outline: none;background: transparent;width: 3em;padding: 0.5em 0;font-size: 1em;}
+table tbody tr.e {background: rgba(0,0,0,0.1);}
+table thead tr td {border-bottom: 1px solid rgba(0,0,0,0.2);padding: 0.2em 0;background: rgb(108,195,160);color: #fff;}
+table tr {border-bottom: 1px solid #ddd;text-align: center;}
+table td {padding: 0 0.5em;}
+table tbody td.total {width: 5em;}
+
+footer {position: absolute;bottom: 0;left: 0;width: 90%;padding: 1em 5%;background: #ddd;text-align: center;}
+button {background: rgb(108,195,160);border: none;padding: 0.6em 1.2em;font: 0.9em 'Oxygen';color: #fff;text-shadow: 1px 1px 2px rgba(0,0,0,0.5);box-shadow: inset 0 -1px rgba(0,0,0,0.6);cursor: pointer;margin-right: 3em;}
+footer span {margin-right: 3em;display: inline-block;}

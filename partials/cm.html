@@ -1,0 +1,29 @@
+<header>
+	<a ng-href="#/{{ notMilkType }}">Switch to {{ notMilkType }}</a>
+	<a ng-click="switch('days')">10/11 Days</a>
+	<a ng-click="switch('rate')" ng-class="{red: rateClass == 'Doraha'}">Switch to {{ notRateClass }}</a>
+</header>
+
+<div id="{{ time | lowercase }}" ng-repeat="time in times">
+	<div class="wrap">
+		<div class="title">{{time}}</div>
+		<table>
+			<thead>
+				<tr>
+					<td>Sr.</td>
+					<td>Qty.</td>
+					<td>%Fat</td>
+					<td>Rate</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="day in days" class="{{ e(day) }}">
+					<td>{{day}}</td>
+					<td><input type="text" ng-model="qty" data-atr="qty"></td>
+					<td><input type="text" ng-model="fat"></td>
+					<td class="total">{{ qty * (cmrate[fat] + offset) | number:2 }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
