@@ -21,7 +21,7 @@
 					<td>{{day}}</td>
 					<td><input type="text" ng-model="qty" data-atr="qty"></td>
 					<td><input type="text" ng-model="fat"></td>
-					<td class="total">{{ qty * fat * (bmrate + offset / 10) | number:2 }}</td>
+					<td class="total">{{ qty * fat * ((bmrate + offset) / 10) | number:2 }}</td>
 				</tr>
 			</tbody>
 		</table>

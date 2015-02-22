@@ -1,6 +1,6 @@
 //	Controllers - myCtrl
 app.controller('myCtrl', ['$scope', '$document', '$rootScope', 'Days', '$route', '$location', function($scope, $document, $rootScope, Days, $route, $location) {
-	
+
 	//	Regular Data
 	$scope.times = ['Morning','Evening'];		//	Shifts
 	$scope.days = Days;							//	Days
@@ -25,7 +25,7 @@ app.controller('myCtrl', ['$scope', '$document', '$rootScope', 'Days', '$route',
 		if ( num % 2 == 0 ) return 'e';
 	};
 	$scope.class = function(current, required) {
-		if ( current == required ) return 'total'; 
+		if ( current == required ) return 'total';
 	};
 	$scope.switch = function(type){
 		var temp;
@@ -55,6 +55,13 @@ app.controller('myCtrl', ['$scope', '$document', '$rootScope', 'Days', '$route',
 			}
 		}
 	};
+	$scope.cmCalc = function(qty, fat){
+		if ( !fat || !qty || fat > 10 ) return '';
+		if ( fat < 4.6 ) var sum = qty * ($scope.cmrate[fat] + $scope.offset);
+		if ( fat > 4.5 && fat < 5 ) var sum = qty * ($scope.cmrate[4.5] + $scope.offset);
+		if ( fat > 4.9 ) var sum = qty * fat * ($scope.bmrate + $scope.offset / 10);
+		return sum > 0 ? sum.toFixed(2) : '';
+	};
 
 
 	//	Keyboard Events
@@ -72,18 +79,18 @@ app.controller('myCtrl', ['$scope', '$document', '$rootScope', 'Days', '$route',
 
 	//	Auto-Focus on first input element
 	angular.element(document).ready(function () {
-        document.getElementsByTagName('input')[0].focus();
-    });
+      document.getElementsByTagName('input')[0].focus();
+  });
 
 	//	Current market rates for BM & CM
-	$scope.bmrate = 52 / 10;
+	$scope.bmrate = 52;
 	$scope.cmrate = {
 		2.0 : 18,
 		2.5 : 21,
 		3.0 : 21.89,
 		3.1 : 22.16,
 		3.2 : 22.42,
-		3.3 : 22.69, 
+		3.3 : 22.69,
 		3.4 : 22.95,
 		3.5 : 23.22,
 		3.6 : 23.48,

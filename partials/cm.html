@@ -21,7 +21,7 @@
 					<td>{{day}}</td>
 					<td><input type="text" ng-model="qty" data-atr="qty"></td>
 					<td><input type="text" ng-model="fat"></td>
-					<td class="total">{{ qty * (cmrate[fat] + offset) | number:2 }}</td>
+					<td class="total">{{  cmCalc(qty, fat) }}</td>
 				</tr>
 			</tbody>
 		</table>
