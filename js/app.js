@@ -2,8 +2,8 @@
 var app = angular.module('diaryApp', ['ngRoute']);
 
 //	Routes Configuration
-app.config(['$routeProvider', function($routeProvider){
-	$routeProvider.
+app.config(['$routeProvider', function($router){
+	$router.
 		when('/buffalo', {templateUrl: 'partials/bm.html', controller: 'myCtrl'}).
 		when('/cow', {templateUrl: 'partials/cm.html', controller: 'myCtrl'}).
 		otherwise({redirectTo: '/buffalo'});

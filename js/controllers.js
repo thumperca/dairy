@@ -59,7 +59,7 @@ app.controller('myCtrl', ['$scope', '$document', '$rootScope', 'Days', '$route',
 		if ( !fat || !qty || fat > 10 ) return '';
 		if ( fat < 4.6 ) var sum = qty * ($scope.cmrate[fat] + $scope.offset);
 		if ( fat > 4.5 && fat < 5 ) var sum = qty * ($scope.cmrate[4.5] + $scope.offset);
-		if ( fat > 4.9 ) var sum = qty * fat * ($scope.bmrate + $scope.offset / 10);
+		if ( fat > 4.9 ) var sum = qty * fat * (($scope.bmrate + $scope.offset) / 10);
 		return sum > 0 ? sum.toFixed(2) : '';
 	};
 
