@@ -20,7 +20,7 @@ $(document).ready(function(){
 			}
 		});
 
-		$(document).find('input[ng-model=qty').each(function(e){
+		$(document).find('input[ng-model=qty]').each(function(e){
 			var temp = $(this).val();
 			var temp = parseFloat(temp);
 			if (typeof temp !== 'NaN' && temp > 0) {
